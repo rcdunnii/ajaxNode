@@ -4,7 +4,7 @@
 
 {% block head %}
   {% parent %}
-  <link rel="stylesheet" href="./custom.css">
+  <link rel="stylesheet" href="views/custom.css">
 {% endblock %}
 
 {% block content %}
