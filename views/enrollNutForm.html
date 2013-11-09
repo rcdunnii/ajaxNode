@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{enrollNut}}{{title}}{% endblock %}
+
+{% block head %}
+  {% parent %}
+  <link rel="stylesheet" href="./custom.css">
+{% endblock %}
+
+{% block content %}
+<h1>{{enrollNut}}</h1>
+
+<form id="myForm" method="POST" action="/insert">
+<input type="text" placeholder="Sir Name" name="sirName" size="20" maxlen="20">
+<input type="text" placeholder="First Name" name="firstName" size="20" maxlen="20">
+<input type="text" placeholder="Last Name" name="lastName" size="20" maxlen="20">
+<input type="text" placeholder="Email 1" name="email1" size="20" maxlen="20">
+<input type="text" placeholder="Email 2" name="email2" size="20" maxlen="20">
+<input type="text" placeholder="Phone 1" name="phone1" size="20" maxlen="20">
+<input type="text" placeholder="Phone 2" name="phone2" size="20" maxlen="20">
+<input type="submit" value="Submit">
+</form>
+
+{% endblock %}

@@ -8,5 +8,11 @@
 {% endblock %}
 
 {% block content %}
-<p>This is just an <span class="red">awesome</span> page. It's called <span class="titleColor">{{title}}</span></p>
+<p>What's your pleasure?</p>
+<form id="nutEntry" action="/triage" method="GET">
+<label for="allNuts" >List Nuts</label><input type="radio" id="allNuts" name="list"><br/>
+<label for="addNut" >Add Nut</label><input type="radio" id="addNut" name="add"><br/>
+<input type="submit" value="Submit">
+</form>
+<p>To edit a nut select it on the list page...</p>
 {% endblock %}
