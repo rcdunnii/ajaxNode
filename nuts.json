@@ -1,0 +1,6 @@
+{ "_id" : { "$oid" : "527ceda990ce9c50c88b4e71" }, "email1" : "rcdunnii@gmail.com", "email2" : 1, "firstName" : "Lord", "lastName" : "Chamberlain", "phone1" : 1, "phone2" : 1, "sirName" : "Chamberlain" }
+{ "_id" : { "$oid" : "527d3e943c7a3fa015000001" }, "email1" : "rabbit@farm.com", "email2" : 1, "firstName" : "Bugs", "lastName" : "Bunny", "phone1" : 1, "phone2" : 1, "sirName" : "Bunny" }
+{ "_id" : { "$oid" : "527d40f1aa859cf01e000001" }, "email1" : "mickey@disney.com", "email2" : 1, "firstName" : "Mickey", "lastName" : "Mouse", "phone1" : 1, "phone2" : 1, "sirName" : "Mouse" }
+{ "_id" : { "$oid" : "527d50ffe6caae901c000001" }, "email1" : "quacker@quack.com", "email2" : 1, "firstName" : "Donald", "lastName" : "Duck", "phone1" : 1, "phone2" : 1, "sirName" : "Duck" }
+{ "sirName" : "Mouse", "firstName" : "Mighty", "lastName" : "Mouse", "email" : "mighty@mouse.com", "_id" : { "$oid" : "527e9616a0af8f641e000001" } }
+{ "sirName" : "Rabbit", "firstName" : "Peter", "lastName" : "Rabbit", "email1" : "bugs@a.b", "email2" : "bunny@b.c", "phone1" : "123-456-7890", "phone2" : "987-654-3210", "_id" : { "$oid" : "527e9a451d5f3d2c1c000001" } }

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	div(style='white-space:pre;')
+		form#myForm(name='myForm', action="/triage", method='GET')
+			label(for='List') List
+			input(type='radio', name='choice' value="List")
+			br
+			label(for='Add') Add
+			input(type='radio', name='choice' value="Add") 
+			br
+			input(type='submit', value='Submit')
+			
+		h2#results.
+			Hi There
+
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+script(src='/public/javascripts/main.js')

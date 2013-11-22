@@ -5,9 +5,8 @@
 
 var express = require('express')
 , swig = require('swig')
-/*, routes = require('./routes')
+, routes = require('./routes')
 , user = require('./routes/user')
-*/
 , http = require('http')
 , url  = require('url')
 , path = require('path')
@@ -31,6 +30,7 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
+app.use(express.bodyParser()); // parse body of post message
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(app.router);
@@ -43,13 +43,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-/*
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
-*/
+app.get('/', routes.index);
+app.get('/search', routes.searchNuts(db));
+app.get('/triage', routes.triage);
+app.get('/enroll', routes.enrollNutForm);
+app.get('/listNuts', routes.listNuts(db));
+app.get('/delete', routes.deleteNut(mongo,db));
+app.get('/edit', routes.editNut(mongo, db));
 
-
+app.post('/insert', routes.insertNut(db));
+app.post('/update', routes.updateNut(mongo,db));
 
 
 http.createServer(app).listen(app.get('port'), function(){

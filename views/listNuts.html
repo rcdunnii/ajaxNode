@@ -3,38 +3,53 @@
 {% block title %}{{listTitle}}{% endblock %}
 
 {% block head %}
-  {% parent %}
-  <link rel="stylesheet" href="./custom.css">
+ 
+  <link rel="stylesheet" href="./stylesheets/custom.css">
+   {% parent %}
 {% endblock %}
 
 {% block content %}
 <h1 class="titleColor">{{listTitle}}</h1>
-
+<div class="content">
 {% if nutCollection %}
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Email 1</th>
-    <th>Email 2</th>
-    <th>Phone 1</th>
-    <th>Phone 2</th>
-  </tr>
-{% for nut in nutCollection %}
- {# {% if loop.first %}<ul class="nutList">{% endif %} #}     
-  <tr>
-    <td>{{nut.firstName}}</td>
-    <td><span class="red">{{nut.lastName}}</span></td>
-    <td><span class="blue">{{nut.email1}}</span> </td>
-    <td><span class="blue">{{nut.email2}}</span> </td>    
-    <td><span class="green">{{nut.phone1}}</span> </td>
-    <td><span class="green">{{nut.phone2}}</span> </td>
-  </tr>
- {# {% if loop.last %}</ul>{% endif %} #}
-{% endfor %}
-</table>
+<table class="nutTable">
+
+	<div class="oneNut"> 
+    
+    {% for nut in nutCollection %}    
+		<tr><td class="icons"><span class="bold">{{nut.Name}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
+		<tr><td><span class="purple">{{nut.FName}} {{nut.LName}}, {{nut.Suffix}}</span></td></tr>        
+		{% for key, val in nut.Loc %}
+			{% if nut.Loc[key].Addr.length %}
+                <tr><td></td></tr>
+                
+				<tr><td>{% if key == 0 %}<img src="./images/letter.png">{% endif %}<span class="blue">	{{val.Addr}}</span> </td></tr>
+				<tr><td>{% if key == 0 %}<img src="./images/phone.png">{% endif %}<span class="blue">	{{val.HomePh}}</span> </td></tr>
+			{% endif %}
+		{% endfor %}
+        <tr><td></td></tr>
+		<tr><td><img src="./images/email.png"><span class="blue">{{nut.Email}}</span> </td></tr>    
+		<tr><td><img src="./images/cell.png"><span class="green">{{nut.CellPh}}</span> </td></tr>
+<!--	<tr><td><span class="maroon">	{{nut.Bday}}</span> </td></tr> -->
+		<tr><td><img src="./images/notes.png" title="Notes"><span class="black">{{nut.Note}}</span> </td></tr>
+		<tr></tr><tr></tr>
+    {% endfor %}
+    
+	</div>
+
+</table><br><br>
+
 {% else %}
 <p>No Nuts!</p>
 {% endif %}
+    
+</div> 
+   
+<div class="footer">
+        <span class="inline"><a href="/">Home</a>   <form id="searchForm" action="/search" method="GET"><input id="search" name="search" type="search" placeholder="Search" /><input type="submit" value="Lookup"></span>
+</div>
+
+<p id="results">Results go here...</p>
 
 {% endblock %}
+

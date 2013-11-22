@@ -1,3 +1,6 @@
 *.bak
 *.lock
+*.sessions
+/download
+/node_modules
 /data

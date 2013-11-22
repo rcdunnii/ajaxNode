@@ -1,0 +1,76 @@
+.titleColor {
+	color: silver;
+}
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: yellow;
+}
+ 
+.purple {
+    color: purple;
+}
+
+.maroon {
+	color: maroon;
+}
+	
+ul.nutList {
+    list-style-type: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.content {
+	position: absolute;
+    margin:0;
+	width: 450px;
+	height: 450px;
+	overflow: auto;
+}
+
+.footer {
+    position: relative;
+    width: 200px;    
+    font-weight: bold;
+    color: brown;
+    top:450px;
+    left:130px;
+}
+
+.inline {
+    display: inline;
+}    
+
+div.oneNut {
+    position: relative;
+    width: 90%
+    margin: 5px, 10px;
+    border: solid 1px red;
+    background-color: rgba(232,232,255, .5);
+}	
+	
+td, #addNutForm {
+	white-space: pre;
+}
+
+td.icons {
+	width: 25px;
+}	
+
+.nutTable {
+    
+}    
+	
