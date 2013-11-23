@@ -1,4 +1,7 @@
 *.bak
+/routes/*.bak
+/views/*.bak
+/public/*/*.bak
 *.lock
 *.sessions
 /download

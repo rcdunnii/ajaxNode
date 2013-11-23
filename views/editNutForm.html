@@ -13,25 +13,25 @@
 
 <form id="myForm" method="POST" action="/update">
 <input type="hidden" name= "nut_ID" value="{{idStr}}" >
-<label for="Name">Sir Name</label><input type="text" placeholder="Name"    name="Name"  id="Name"  size="20" maxlen="20" value= "{{editDoc[0].Name}}" ><br>
-<label for="FName">First Name</label><input type="text" placeholder="First Name"   name="FName"  id="FName" size="20" maxlen="20" value= "{{editDoc[0].FName}}" ><br>
-<label for="LName">Last Name</label><input type="text" placeholder="Last Name"    name="LName"  id="LName"  size="20" maxlen="20" value= "{{editDoc[0].LName}}" > <label for="suffix">Suffix</label>  <select name="Suffix" value= "{{editDoc[0].Suffix}}">
+<label for="LName">Family Name</label><input type="text"  name="LName"  id="LName size="20" maxlen="20" value= "{{editDoc[0].LName}}" ><label for="suffix">Suffix</label>  <select name="Suffix" id="suffix" value= "{{editDoc[0].Suffix}}">
      <option value="">None</option>
      <option value="Jr">Jr</option>
      <option value="Sr">Sr</option>
      <option value="III">III</option>
      <option value="IV">IV</option>
-   </select><br>
-<label for="Addr1">Address</label><input type="text" placeholder="Address 1"    name="Addr1"  id="Addr1"  size="60" maxlen="60" value= "{{editDoc[0].Loc[0].Addr}}" ><br>
-<label for="HomePh1">Home Phone</label><input type="text" placeholder="    Phone"    name="HomePh1" id="HomePh1"  size="50" maxlen="50" value= "{{editDoc[0].Loc[0].HomePh}}" ><br>
-<label for="Addr2">Address</label><input type="text" placeholder="Address 2"    name="Addr2"  id="Addr2"  size="60" maxlen="60" value= "{{editDoc[0].Loc[1].Addr}}" ><br>
-<label for="HomePh2">Home Phone</label><input type="text" placeholder="    Phone"    name="HomePh2" id="HomePh2"  size="50" maxlen="50" value= "{{editDoc[0].Loc[1].HomePh}}" ><br>
-<label for="Addr3">Address</label><input type="text" placeholder="Address 3"    name="Addr3"  id="Addr3"  size="60" maxlen="60" value= "{{editDoc[0].Loc[2].Addr}}" ><br>
-<label for="HomePh3">Home Phone</label><input type="text" placeholder="    Phone"    name="HomePh3" id="HomePh3"  size="50" maxlen="50" value= "{{editDoc[0].Loc[2].HomePh}}" ><br>
-<label for="Email">Email</label><input type="text" placeholder="Email"        name="Email"  id="Email"  size="30" maxlen="30" value= "{{editDoc[0].Email}}" ><br>
-<label for="CellPh">Cell Phone</label><input type="text" placeholder="Cell Phone"   name="CellPh" id="CellPh"  size="50" maxlen="50" value= "{{editDoc[0].CellPh}}" ><br>
-<label for="Bday">Birthday (mm/dd/yyyy)</label><input type="text" placeholder="Birthday (mm/dd/yyyy)" name="Bday" id="Bday" size="21" maxlen="21" value= "{{editDoc[0].Bday}}" ><br>
-<label for="Note">Note</label><input type="text" placeholder="Note" name="Note" id="Note" size="50" maxlen="50" value= "{{editDoc[0].Note}}" ><br><br>
+   </select><br><br>
+<label for="Names">First Name(s)</label><input type="text"  name="Names" id="Names" size="20" maxlen="20" value= "{{editDoc[0].Names}}" ><br>
+<label for="Addr1">Address</label><input type="text" name="Addr1"  id="Addr1"  size="60" maxlen="60" value= "{{editDoc[0].Loc[0].Addr}}" ><br>
+<label for="HomePh1">Home Phone</label><input type="text"  name="HomePh1" id="HomePh1"  size="50" maxlen="50" value= "{{editDoc[0].Loc[0].HomePh}}" ><br>
+<label for="Addr2">Address</label><input type="text" name="Addr2"  id="Addr2"  size="60" maxlen="60" value= "{{editDoc[0].Loc[1].Addr}}" ><br>
+<label for="HomePh2">Home Phone</label><input type="text"  name="HomePh2" id="HomePh2"  size="50" maxlen="50" value= "{{editDoc[0].Loc[1].HomePh}}" ><br>
+<label for="Addr3">Address</label><input type="text"  name="Addr3"  id="Addr3"  size="60" maxlen="60" value= "{{editDoc[0].Loc[2].Addr}}" ><br>
+<label for="HomePh3">Home Phone</label><input type="text"  name="HomePh3" id="HomePh3"  size="50" maxlen="50" value= "{{editDoc[0].Loc[2].HomePh}}" ><br>
+<label for="Email1">Email 1</label><input type="text" name="Email1"  id="Email1"  size="30" maxlen="30" value= "{{editDoc[0].Email1}}" ><br>
+<label for="Email2">Email 1</label><input type="text" name="Email2"  id="Email1"  size="30" maxlen="30" value= "{{editDoc[0].Email2}}" ><br>
+<label for="CellPh">Cell Phone</label><input type="text" name="CellPh" id="CellPh"  size="50" maxlen="50" value= "{{editDoc[0].CellPh}}" ><br>
+<!--- <label for="Bday">Birthday (mm/dd/yyyy)</label><input type="text" name="Bday" id="Bday" size="21" maxlen="21" value= "{{editDoc[0].Bday}}" ><br>  -->
+<label for="Note">Note</label><input type="text" name="Note" id="Note" size="50" maxlen="50" value= "{{editDoc[0].Note}}" ><br><br>
 <input type="submit" value="   Submit" class="submitBtn">
 </form><br><br>
 <a href="/">Home</a>

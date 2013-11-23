@@ -10,8 +10,8 @@
 
   exports.listNuts = function(db) {
      return function(req, res) {
-         var collection = db.get('nuts');
-         collection.find({},{},function(e,docs){
+         var collection = db.get('nuts');        
+         collection.find({}, {"sort" : "LName" }, function(e,docs){
             if (e) throw error;
              res.render('listNuts', {"nutCollection" : docs, "listTitle": "Our Nuts"});
          });
@@ -23,10 +23,14 @@
    return function(req, res) {
          var collection = db.get('nuts')
          , target = new RegExp(req.query.search, "i");
-       collection.find( {"$or": [{"LName": target}, {"FName": target}]}, {}, function(e, matches) { 
-           if (e) throw error; 
-            console.log("targets: " + target + ", matches: " + matches);
-            res.render('listNuts', {"nutCollection" : matches, "listTitle": "Search Results"});          
+       collection.find( {"$or": [{"LName": target}, {"Names": target}]}, {}, function(e, matches) { 
+           if (e) throw error;
+           if (matches) {
+                console.log("targets: " + target + ", matches: " + matches);
+                res.render('listNuts', {"nutCollection" : matches, "listTitle": "Search Results"});
+           } else {
+                res.render('listNuts', {"noResults" : "Nuttin' found..."});
+           } 
          });
     };
 };    
@@ -55,10 +59,9 @@
 		,   obj_id = new BSON.ObjectID(req.body.nut_ID);
 			collection.update({"_id": obj_id},
 				{"$set": {
-                      "Name": req.body.Name,
                       "LName": req.body.LName,
+                      "Names": req.body.Names,
                       "Suffix": req.body.Suffix,
-					  "FName": req.body.FName,					  
 					  "Loc" : [
 									{
 										"Addr": req.body.Addr1,
@@ -73,7 +76,8 @@
 										"HomePh": req.body.HomePh3
 									}
 								],						
-					  "Email": req.body.Email,
+					  "Email1": req.body.Email1,
+					  "Email2": req.body.Email2,                      
 					  "CellPh": req.body.CellPh,
 					  "Bday": req.body.Bday,
 					  "Note": req.body.Note }}, function(error) {
@@ -93,9 +97,8 @@
             alert("Must enter name in Sir Name field");
             return;
         } else {    
-        var Name =  req.body.Name
-        , lastName = req.body.LName
-        , firstName = req.body.FName
+        var LName =  req.body.LName
+        , Names = req.body.Names
         , suffix = req.body.Suffix
         , addr1 = req.body.Addr1
         , hphone1 = req.body.HomePh1
@@ -103,18 +106,17 @@
         , hphone2 = req.body.HomePh2
         , addr3 = req.body.Addr3
         , hphone3 = req.body.HomePh3
-        , email = req.body.Email
+        , email1 = req.body.Email1
+        , email2 = req.body.Email2        
         , cellphone = req.body.CellPh
         , bday = req.body.Bday
         , note = req.body.Note;        
          // Set our collection
         var collection = db.get('nuts');
         collection.insert({
-            "Name"  : Name,
-            "LName" : lastName,
+            "LName" : LName,
+            "Names" : Names,
             "Suffix": suffix, 
-            "FName" : firstName,
-            "LName" : lastName,
             "Loc" : [
                         {
                             "Addr" : addr1,

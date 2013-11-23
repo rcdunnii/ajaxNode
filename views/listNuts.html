@@ -13,34 +13,36 @@
 <div class="content">
 {% if nutCollection %}
 <table class="nutTable">
-
-	<div class="oneNut"> 
-    
     {% for nut in nutCollection %}    
-		<tr><td class="icons"><span class="bold">{{nut.Name}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
-		<tr><td><span class="purple">{{nut.FName}} {{nut.LName}}, {{nut.Suffix}}</span></td></tr>        
+		<tr><td class="icons"><span class="bold">{{nut.LName}} {{nut.Suffix}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
+		<tr><td><span class="purple">{{nut.Names}}</span></td></tr>        
 		{% for key, val in nut.Loc %}
 			{% if nut.Loc[key].Addr.length %}
-                <tr><td></td></tr>
-                
-				<tr><td>{% if key == 0 %}<img src="./images/letter.png">{% endif %}<span class="blue">	{{val.Addr}}</span> </td></tr>
-				<tr><td>{% if key == 0 %}<img src="./images/phone.png">{% endif %}<span class="blue">	{{val.HomePh}}</span> </td></tr>
+                <tr><td></td></tr>            
+				<tr><td>{% if key == 0 %}<img src="./images/letter.png">{% endif %}<span class="blue">  {{val.Addr}}</span> </td></tr>
+				<tr><td>{% if key == 0 %}<img src="./images/phone.png">{% endif %}<span class="blue">   {{val.HomePh}}</span> </td></tr>
 			{% endif %}
-		{% endfor %}
+	   {% endfor %}
         <tr><td></td></tr>
-		<tr><td><img src="./images/email.png"><span class="blue">{{nut.Email}}</span> </td></tr>    
-		<tr><td><img src="./images/cell.png"><span class="green">{{nut.CellPh}}</span> </td></tr>
+       {% if nut.Email1 %}        
+		<tr><td><img src="./images/email.png"><span class="blue">  {{nut.Email1}}</span> </td></tr>
+       {% endif %}
+       {% if nut.Email2 %}
+		<tr><td><span class="blue"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{nut.Email2}}</span> </td></tr>
+       {% endif %}
+       {% if nut.CellPh %}
+		<tr><td><img src="./images/cell.png"><span class="green">   {{nut.CellPh}}</span> </td></tr>
+       {% endif %}
 <!--	<tr><td><span class="maroon">	{{nut.Bday}}</span> </td></tr> -->
-		<tr><td><img src="./images/notes.png" title="Notes"><span class="black">{{nut.Note}}</span> </td></tr>
-		<tr></tr><tr></tr>
+       {% if nut.Notes %}
+		<tr><td><img src="./images/notes.png" title="Notes">Notes: <span class="black">{{nut.Note}}</span> </td></tr>
+       {% endif %}
+		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
     {% endfor %}
-    
-	</div>
-
 </table><br><br>
 
 {% else %}
-<p>No Nuts!</p>
+<p>{% block results %}{{noResults}}{% endblock %}</p>
 {% endif %}
     
 </div> 
@@ -48,8 +50,6 @@
 <div class="footer">
         <span class="inline"><a href="/">Home</a>   <form id="searchForm" action="/search" method="GET"><input id="search" name="search" type="search" placeholder="Search" /><input type="submit" value="Lookup"></span>
 </div>
-
-<p id="results">Results go here...</p>
 
 {% endblock %}
 

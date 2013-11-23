@@ -10,22 +10,27 @@
 
   exports.listNuts = function(db) {
      return function(req, res) {
-         var collection = db.get('nuts');
-         collection.find({},{},function(e,docs){
+         var collection = db.get('nuts');        
+         collection.find({}, {"sort" : "LName" }, function(e,docs){
             if (e) throw error;
              res.render('listNuts', {"nutCollection" : docs, "listTitle": "Our Nuts"});
          });
      }
  }
  
+// search carried out from listNuts view and re-renders that page with any matches 
  exports.searchNuts = function(db){
    return function(req, res) {
          var collection = db.get('nuts')
          , target = new RegExp(req.query.search, "i");
-       collection.find( {"$or": [{"LName": target}, {"FName": target}]}, {}, function(e, matches) { 
-           if (e) throw error; 
-            console.log("targets: " + target + ", matches: " + matches);
-            res.render('listNuts', {"nutCollection" : matches, "listTitle": "Search Results"});          
+       collection.find( {"$or": [{"LName": target}, {"Names": target}]}, {}, function(e, matches) { 
+           if (e) throw error;
+           if (matches) {
+                console.log("targets: " + target + ", matches: " + matches);
+                res.render('listNuts', {"nutCollection" : matches, "listTitle": "Search Results"});
+           } else {
+                res.render('listNuts', {"noResults" : "Nuttin' found..."});
+           } 
          });
     };
 };    
