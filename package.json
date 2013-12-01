@@ -12,6 +12,7 @@
     "mongodb": "*",
     "consolidate": "~0.9.1",
     "swig": "~1.1.0",
-    "supervisor": "~0.5.6"
+    "supervisor": "~0.5.6",
+    "express-validator": "*"
   }
 }

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block head %}
+  {% parent %}
+ <link rel="stylesheet" href="./stylesheets/custom.css"> 
+{% endblock %}
+
+
+{% block content %}
+<div class="welcome">
+
+      
+        <h1 class="txt-cntr">Welcome to Our Nuts</h1>
+
+        <h3 class="bg-head txt-cntr">Our Nuts User Management</h3>
+        
+        <p class="txt-cntr">
+        {% if !user %}
+        
+        <a href="/login">LOGIN </a>
+        
+        {% else %}
+        
+        <a href="/logout">LOGOUT</a>
+        
+        {% endif %}
+        </p>
+      
+</div>
+{% endblock %}
+

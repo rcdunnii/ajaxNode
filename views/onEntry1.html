@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="./stylesheets/custom.css">
+  {% parent %}
+{% endblock %}
+{% block content %}
+<div>
+<p>Hi there</p>
+{% if !user %}
+ <a href="/login">LOGIN </a>
+ {% else %}
+ <a href="/logout">LOGOUT</a>
+ {% endif %}
+</div>
+{% endblock %}
+
+
+

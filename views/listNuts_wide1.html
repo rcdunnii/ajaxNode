@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{listTitle}}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="./stylesheets/custom.css">
+<link rel="stylesheet" href="./stylesheets/jquery.mCustomScrollbar.css">
+{% parent %}
+<script src="./javascripts/jquery.mCustomScrollbar.concat.min.js"></script>
+ <script>
+    (function($){
+        $(window).load(function(){
+            $(".content").mCustomScrollbar({
+                theme: "dark"
+                });
+        });
+    })(jQuery);
+</script>
+  
+{% endblock head %}
+ 
+
+{% block content %}
+
+    <h1 class="titleColor txt-cntr">{{listTitle}}</h1>
+
+    {% if nutCollection %}
+
+        <div class="content">
+            
+            <div class="tableWrap">
+            
+                {% for keyVal, nut in nutCollection %}
+                    {% if loop.index0 % 2 %}
+                        {% set side = "odd" %}
+                    {% else %}
+                         {% set side = "even" %}
+                    {% endif %}
+                    <table class= "{{side}}">
+                    <tr><td class="icons"><span class="bold">{{nut.LName}} {{nut.Suffix}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
+                    <tr><td><span class="purple">{{nut.Names}}</span></td></tr>        
+                    {% for key, val in nut.Loc %}
+                        {% if nut.Loc[key].Addr.length %}
+                            <tr><td></td></tr>            
+                            <tr><td>{% if key == 0 %}<img src="./images/letter.png">{% endif %}<span class="blue">  {{val.Addr}}</span> </td></tr>
+                            <tr><td>{% if key == 0 %}<img src="./images/phone.png">{% endif %}<span class="blue">   {{val.HomePh}}</span> </td></tr>
+                        {% endif %}
+                   {% endfor %}
+                    <tr><td></td></tr>
+                   {% if nut.Email1 %}        
+                    <tr><td><img src="./images/email.png"><span class="blue">  {{nut.Email1}}</span> </td></tr>
+                   {% endif %}
+                   {% if nutCollection[keyVal].Email2 %}
+                    <tr><td><span class="blue"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{nut.Email2}}</span> </td></tr>
+                   {% endif %}
+                   {% if nut.CellPh %}
+                    <tr><td><img src="./images/cell.png"><span class="green">   {{nut.CellPh}}</span> </td></tr>
+                   {% endif %}
+                    <!--	<tr><td><span class="maroon">	{{nut.Bday}}</span> </td></tr> -->
+                   {% if nutCollection[keyVal].Notes %}
+                    <tr><td><img src="./images/notes.png" title="Notes">Notes: <span class="black">{{nut.Note}}</span> </td></tr>
+                   {% endif %}
+                    <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>   
+                    </table>
+                {% endfor %}
+                
+                               
+            </div>
+            
+        </div>   
+
+    {% else %}
+        <p>{% block results %}{% endblock results %}</p>
+      
+    {% endif %}
+
+
+    
+{% endblock content %}
+
+{% block footer %}
+ <div class="footer">
+        <div><a class="fl" href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;<form id="searchForm" action="/search" method="GET"><input class="fl" id="search" name="search" type="search" placeholder="Search" /><input class="fl" type="image" src="./images/searchtool.png" title="Lookup"></div>
+</div>
+{% endblock footer %}

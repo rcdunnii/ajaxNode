@@ -10,15 +10,20 @@
 <script>
     (function($){
         $(window).load(function(){
-            $(".content").mCustomScrollbar();
+            $(".content").mCustomScrollbar({
+                theme: "dark"
+                });
         });
     })(jQuery);
-</script>     
+</script>
+  
 {% endblock %}
  
 
 {% block content %}
-<h1 class="titleColor">{{listTitle}}</h1>
+<h1 class="titleColor txt-cntr">{{listTitle}}</h1>
+
+<h3 class="green txt-cntr"> Number of Nuts: {{nutCollection.length}} </h3>
 
 {% if nutCollection %}
 
@@ -26,43 +31,45 @@
 
     <table class="nutTable">
 
-        {% for nut in nutCollection %}
+        {% for keyVal, nut in nutCollection %}
         
-            <tr><td class="icons"><span class="bold">{{nut.LName}} {{nut.Suffix}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
-            <tr><td><span class="purple">{{nut.Names}}</span></td></tr>        
+            <tr><td class="icons"><span class="bold"><span class="green class="m-l-5"">{{loop.index}}.</span> {{nut.LName}} {{nut.Suffix}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
+            <tr><td><span class="purple m-l-5">{{nut.Names}}</span></td></tr>        
             {% for key, val in nut.Loc %}
                 {% if nut.Loc[key].Addr.length %}
                     <tr><td></td></tr>            
-                    <tr><td>{% if key == 0 %}<img src="./images/letter.png">{% endif %}<span class="blue">  {{val.Addr}}</span> </td></tr>
-                    <tr><td>{% if key == 0 %}<img src="./images/phone.png">{% endif %}<span class="blue">   {{val.HomePh}}</span> </td></tr>
+                    <tr><td>{% if key == 0 %}<img class="m-l-5" src="./images/letter.png">{% endif %}<span class= "blue m-l-5">  {{val.Addr}}</span> </td></tr>
+                    <tr><td>{% if key == 0 %}<img class="m-l-5" src="./images/phone.png">{% endif %}<span class= "blue m-l-5">   {{val.HomePh}}</span> </td></tr>
                 {% endif %}
            {% endfor %}
             <tr><td></td></tr>
            {% if nut.Email1 %}        
-            <tr><td><img src="./images/email.png"><span class="blue">  {{nut.Email1}}</span> </td></tr>
+            <tr><td><img class="m-l-5" src="./images/email.png"><span class="blue">  {{nut.Email1}}</span> </td></tr>
            {% endif %}
            {% if nut.Email2 %}
-            <tr><td><span class="blue"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{nut.Email2}}</span> </td></tr>
+            <tr><td><span class="blue m-l-5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{nut.Email2}}</span> </td></tr>
            {% endif %}
            {% if nut.CellPh %}
-            <tr><td><img src="./images/cell.png"><span class="green">   {{nut.CellPh}}</span> </td></tr>
+            <tr><td><img class="m-l-5" src="./images/cell.png"><span class="green">   {{nut.CellPh}}</span> </td></tr>
            {% endif %}
     <!--	<tr><td><span class="maroon">	{{nut.Bday}}</span> </td></tr> -->
            {% if nut.Notes %}
-            <tr><td><img src="./images/notes.png" title="Notes">Notes: <span class="black">{{nut.Note}}</span> </td></tr>
+            <tr><td><img class="m-l-5" src="./images/notes.png" title="Notes">Notes: <span class="black">{{nut.Note}}</span> </td></tr>
            {% endif %}
             <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
         {% endfor %}
+        
     </table><br><br>
 
 {% else %}
-    <p>{% block results %}{{noResults}}{% endblock %}</p>
-    </div>
+    <p>{% block results %}{{noResults}}{% endblock %}</p>   
 {% endif %}
-      
-<div class="footer">
-        <span class="inline"><a href="/">Home</a>   <form id="searchForm" action="/search" method="GET"><input id="search" name="search" type="search" placeholder="Search" /><input type="submit" value="Lookup"></span>
+</div>     
+{% endblock %}
+{% block footer %}
+ <div class="footer pre">
+        <div class="nav">
+            <a class="bold fl m-l-10" href="/home">Home</a><span>                         </span><form id="searchForm" action="/search" method="GET"><input class="fl" id="search" name="search" type="search" placeholder="Search" /><input class="fl" type="image" src="./images/searchtool.png" title="Lookup">
+        </div>
 </div>
-
-
 {% endblock %}

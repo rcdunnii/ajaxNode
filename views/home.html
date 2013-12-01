@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block head %}
+  {% parent %}
+ <link rel="stylesheet" href="./stylesheets/custom.css"> 
+{% endblock %}
+
+{% block content %}
+
+<div class ="loginContainer">
+
+<h2 class="txt-cntr">WELCOME {{ username }} </h2>
+
+<p class="txt-cntr"><a  href="/listNuts" title="All the Nuts">View All Nuts</a>&nbsp;&nbsp;&nbsp;
+    {% if !user %}
+       <a href="/login">LOGIN USING APP</a></p>
+    {%  else %}
+        <a href="/logout">LOGOUT</a></p>
+    {%  endif %}
+
+<p class="txt-cntr"> You are logged in as <b>{{username }}</b>.<br> You can view list of all nuts by clicking the <br><b>"View All
+    Nuts"</b> link<br/><br/></p>
+    
+</div>
+
+{% endblock %}

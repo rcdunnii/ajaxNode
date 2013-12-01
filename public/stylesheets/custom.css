@@ -1,6 +1,101 @@
-.titleColor {
-	color: silver;
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: silver; 
+  width: 500px;
+  position: absolute;
+  left: 360px;
 }
+
+.content {
+ /*  text-align: center;    */
+  background: #f5fffa;  
+  color: #00f;
+  position: absolute;
+  margin:0;
+  width:  500px;
+  height: 300px;
+  overflow: auto;
+  left: 50px;
+  border: 2px solid #d8bfd8;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+a {
+  color: #00b7ff;
+}
+
+ul.nutList {
+    list-style-type: none;
+}
+
+.tableWrap {
+    width: 1000px;
+    height: auto;
+    position: relative;
+}
+
+.even {
+    float: left;
+    width: 400px;
+    height: 700px
+    border: 0;
+    align: left;
+    margin-right: 10px;
+}
+
+.odd {
+    float: left;
+    width: 400px;
+    height: 700px    
+    border: 0;
+    align: left;
+    cellpadding: 0;
+    cellspacing: 0;
+}    
+ 
+div.oneNut {
+    position: relative;
+    width: 90%
+    margin: 5px, 10px;
+    border: solid 1px red;
+    background-color: rgba(232,232,255, .5);
+}	
+   
+td, #addNutForm {
+	white-space: pre;
+    margin-left: 5px;
+}
+
+td.icons {
+    color: red;
+	width: 25px;
+}	
+
+#searchForm {
+    display: inline-block;
+}
+
+.nav {
+    width: 450px;
+    margin: auto;
+}
+
+.pre {
+    white-space: pre;
+}
+    
+.titleColor {
+	color: tangerine;
+}
+
+.black {
+    color: black;
+}
+
 .blue {
     color: blue;
 }
@@ -25,52 +120,126 @@
 	color: maroon;
 }
 	
-ul.nutList {
-    list-style-type: none;
-}
 
 .bold {
 	font-weight: bold;
 }
 
-.content {
-	position: absolute;
-    margin:0;
-	width: 450px;
-	height: 450px;
-	overflow: auto;
+.welcome, #login-form , .loginContainer {
+    position: absolute;
+    background: #f5fffa;  
+    color: #00f;
+    width: 450px;
+    height: 150px;
+    left: 50%;
+    right: 50%;
+    margin-left: -225px;
+    margin-top: -50px;
+    top: 250px;
+    border: 2px solid #d8bfd8;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}    
+
+.loginContainer a {
+  text-decoration: none;
+}
+
+.loginHeader {
+    position: absolute;
+    top:125px;
+    left: 525px;
+}
+    
+#login-form div {
+  margin: 15px 20px;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.txt-cntr {
+  text-align: center;
+}
+.clr {
+  clear: both;
+}
+
+.d-i {
+    display: inline;
+}    
+  
+.d-i-b {
+  display: inline-block;
+}
+.m-l-10 {
+  margin-left: 10px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+.err-msg {
+  clear: both;
+  color: #f00;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.submit-button input {
+  margin-left: 75px;
+}
+#login-form div label {
+  display: inline-block;
+  margin-right: 5px;
+  width: 150px;
+}
+.listing {
+  clear: both;
+  margin: auto;
+}
+.sucess-msg {
+  color: #008000;
+  font-weight: bold;
+  margin: 10px auto;
+}
+.home-link {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: 390px;
+  left: 570px;
+  color: #00b7ff;
+}
+
+.delete {
+  background-color: #f00;
+  border-radius: 3px;
+  color: #fff;
+  padding: 2px 4px;
+  text-decoration: none;
+}
+
+.bg-head {
+  color: #ba55d3;
+}
+
+.content:first-of-type {
+  margin-top: 2px;
 }
 
 .footer {
-    position: relative;
-    width: 200px;    
+    position: absolute;
+    width: 450px;    
     font-weight: bold;
     color: brown;
-    top:450px;
-    left:130px;
+    top:442px;
+    left: 115px;
 }
 
-.inline {
-    display: inline;
-}    
-
-div.oneNut {
-    position: relative;
-    width: 90%
-    margin: 5px, 10px;
-    border: solid 1px red;
-    background-color: rgba(232,232,255, .5);
-}	
-	
-td, #addNutForm {
-	white-space: pre;
-}
-
-td.icons {
-	width: 25px;
-}	
-
-.nutTable {
-    
-}    
-	

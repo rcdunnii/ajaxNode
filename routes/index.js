@@ -4,17 +4,19 @@
   * GET home page.
   */
  
- exports.index = function(req, res){
-   res.render('index',{ title: 'Welcome, Nut' });
- };
 
   exports.listNuts = function(db) {
      return function(req, res) {
-         var collection = db.get('nuts');        
-         collection.find({}, {"sort" : "LName" }, function(e,docs){
-            if (e) throw error;
-             res.render('listNuts', {"nutCollection" : docs, "listTitle": "Our Nuts"});
-         });
+        var collection = db.get('nuts');
+        collection.find({},{"sort" : "LName"}, function(e, docsObj){
+            if (e) throw error; 
+            var docsArr = [];
+            for (key in docsObj) { 
+             //   console.log(docsObj[key].LName);
+                docsArr.push(docsObj[key]);                
+            }     
+            res.render('listNuts', {"nutCollection" : docsArr, "listTitle": "Our Nuts", "numRecs": key}); 
+        });
      }
  }
  
