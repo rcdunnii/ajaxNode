@@ -5,20 +5,23 @@
   */
  
 
-  exports.listNuts = function(db) {
-     return function(req, res) {
-        var collection = db.get('nuts');
-        collection.find({},{"sort" : "LName"}, function(e, docsObj){
-            if (e) throw error; 
-            var docsArr = [];
-            for (key in docsObj) { 
-             //   console.log(docsObj[key].LName);
-                docsArr.push(docsObj[key]);                
-            }     
-            res.render('listNuts', {"nutCollection" : docsArr, "listTitle": "Our Nuts", "numRecs": key}); 
-        });
-     }
- }
+  exports.listNuts = function(db) { 
+   return function(req, res) {   
+      var collection = db.get('nuts');
+      collection.find({},{"sort" : "LName"})
+        .on("success", function(docsObjs){   
+ /*        console.log(typeof docsObjs);
+           if (e) throw error;  
+            var docsArr = []; */
+            var thisHost = require('os').hostname();
+ /*           for (key in docsObjs) { 
+             //   console.log(docsObjs[key].LName);
+                docsArr.push(docsObjs[key]);
+            }   */
+            res.render('listNuts', {"nutCollection" : docsObjs, "listTitle": "Our Nuts", "thisHost": thisHost}); 
+        }) 
+   };
+};   
  
 // search carried out from listNuts view and re-renders that page with any matches 
  exports.searchNuts = function(db){

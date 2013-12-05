@@ -22,8 +22,8 @@
 
 {% block content %}
 <h1 class="titleColor txt-cntr">{{listTitle}}</h1>
-
-<h3 class="green txt-cntr"> Number of Nuts: {{nutCollection.length}} </h3>
+<p class="maroon txt-cntr">{{thisHost}}</p>
+<h2 class="green txt-cntr">Number of Nuts: {{nutCollection.length}}</h2>
 
 {% if nutCollection %}
 
@@ -36,7 +36,7 @@
             <tr><td class="icons"><span class="bold"><span class="green class="m-l-5"">{{loop.index}}.</span> {{nut.LName}} {{nut.Suffix}}       <a href="/edit?target={{nut._id.valueOf()}}" title="Edit"><img src="./images/edit.png"></a>   <a href="/delete?target={{nut._id.valueOf()}}" title="Delete"><img src="./images/trash.png"></a></td></tr>
             <tr><td><span class="purple m-l-5">{{nut.Names}}</span></td></tr>        
             {% for key, val in nut.Loc %}
-                {% if nut.Loc[key].Addr.length %}
+                {% if (nut.Loc[key].Addr) %}
                     <tr><td></td></tr>            
                     <tr><td>{% if key == 0 %}<img class="m-l-5" src="./images/letter.png">{% endif %}<span class= "blue m-l-5">  {{val.Addr}}</span> </td></tr>
                     <tr><td>{% if key == 0 %}<img class="m-l-5" src="./images/phone.png">{% endif %}<span class= "blue m-l-5">   {{val.HomePh}}</span> </td></tr>

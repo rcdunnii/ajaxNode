@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block content %}
-<h2 class="txt-cntr">Registration</h2>
+<h2 class="loginHeader txt-cntr">Registration</h2>
 
 <div class="login-head txt-cntr">
-    <form id= "login-form" enctype="multipart/form-data" autocomplete="off" action="/register" method="post">
+    <form id= "regForm" enctype="multipart/form-data" autocomplete="off" action="/register" method="post">
         <div class="fl clr d-i-b">
             <label>EMAIL</label>
             <input type="text" name="email" value="{{email}}"/>
@@ -37,7 +37,7 @@
     </form>
 </div>
 
-<a class="fr home-link" href="/">Back to Home</a>
+<a class="fr reg-home-link" href="/">Back to Home</a>
 {% endblock %}
 
 {% block footer %} {% endblock %}

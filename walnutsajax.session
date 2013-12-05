@@ -1,7 +1,19 @@
 <NotepadPlus>
     <Session activeView="0">
-        <mainView activeIndex="0">
-            <File firstVisibleLine="0" xOffset="0" scrollWidth="2008" startPos="0" endPos="0" selMode="0" lang="Javascript" encoding="-1" filename="G:\mongodb\ajax\ajaxapp.js" />
+        <mainView activeIndex="9">
+            <File firstVisibleLine="35" xOffset="0" scrollWidth="1" startPos="1566" endPos="1566" selMode="0" lang="Javascript" encoding="-1" filename="G:\mongodb\ajax\app.js" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2760" startPos="197" endPos="197" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\onEntry.html" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2304" startPos="353" endPos="353" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\layout.html" />
+            <File firstVisibleLine="5" xOffset="0" scrollWidth="2760" startPos="229" endPos="229" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\login.html" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2760" startPos="638" endPos="638" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\home.html" />
+            <File firstVisibleLine="10" xOffset="0" scrollWidth="2760" startPos="1131" endPos="1131" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\register.html" />
+            <File firstVisibleLine="71" xOffset="0" scrollWidth="2760" startPos="4793" endPos="4793" selMode="0" lang="Javascript" encoding="-1" filename="G:\mongodb\ajax\routes\user.js" />
+            <File firstVisibleLine="46" xOffset="0" scrollWidth="2760" startPos="2967" endPos="2967" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\listNuts.html" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2760" startPos="326" endPos="326" selMode="0" lang="Javascript" encoding="-1" filename="G:\mongodb\ajax\routes\index.js" />
+            <File firstVisibleLine="74" xOffset="0" scrollWidth="208" startPos="1435" endPos="1435" selMode="0" lang="CSS" encoding="-1" filename="G:\mongodb\ajax\public\stylesheets\custom.css" />
+            <File firstVisibleLine="153" xOffset="0" scrollWidth="2648" startPos="3785" endPos="3793" selMode="0" lang="CSS" encoding="-1" filename="C:\xampp\htdocs\walnuts\css\main.css" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2760" startPos="176" endPos="176" selMode="0" lang="HTML" encoding="-1" filename="G:\mongodb\ajax\views\form.html" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2760" startPos="353" endPos="633" selMode="0" lang="Normal Text" encoding="-1" filename="G:\mongodb\ajax\views\index.jade" />
         </mainView>
         <subView activeIndex="0" />
     </Session>

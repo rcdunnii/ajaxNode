@@ -140,8 +140,42 @@ td.icons {
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
-}    
+} 
 
+#regForm {
+    position: absolute;
+    background: #f5fffa;  
+    color: #00f;
+    width: 450px;
+    height: 250px;
+    left: 50%;
+    right: 50%;
+    margin-left: -225px;
+    margin-top: -50px;
+    top: 250px;
+    border: 2px solid #d8bfd8;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px; 
+}
+
+addNutForm, #editNutForm {
+    position: absolute;
+    background: #f5fffa;
+    color: #00f;
+    width: 600px;
+    height: 560px;
+    left: 50%;
+    right: 50%;
+    margin-left: -300px;
+    margin-top: -50px;
+    top: 185px;
+    border: 2px solid #d8bfd8;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+ 
 .loginContainer a {
   text-decoration: none;
 }
@@ -149,12 +183,45 @@ td.icons {
 .loginHeader {
     position: absolute;
     top:125px;
-    left: 525px;
+    left: 190px;
+    width: 250px;
 }
     
-#login-form div {
-  margin: 15px 20px;
+#login-form div,
+#regForm div,
+#addNutForm div,
+#editNutForm div {
+  margin: 10px 20px;
 }
+
+#login-form div label,
+#regForm div label ,
+#addNutForm div label,
+#editNutForm div label {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#login-form div label,
+#regForm div label {
+  width: 150px;
+}  
+
+#addNutForm div label,
+#editNutForm div label {
+  width: 120px;
+} 
+
+#editNutForm div.formContent,
+#addNutForm div.formContent
+{
+    margin-top: 15px;
+}
+
+.suffix {
+    text-align: right;
+}
+    
 .fl {
   float: left;
 }
@@ -193,13 +260,10 @@ td.icons {
 }
 
 .submit-button input {
-  margin-left: 75px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
-#login-form div label {
-  display: inline-block;
-  margin-right: 5px;
-  width: 150px;
-}
+
 .listing {
   clear: both;
   margin: auto;
@@ -209,12 +273,24 @@ td.icons {
   font-weight: bold;
   margin: 10px auto;
 }
-.home-link {
+
+.login-home-link {
   font-weight: bold;
   font-size: 18px;
   position: absolute;
+  width: 250px;
   top: 390px;
-  left: 570px;
+  left: 250px;
+  color: #00b7ff;
+}
+
+.reg-home-link {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  width: 250px;
+  top: 470px;
+  left: 260px;
   color: #00b7ff;
 }
 
@@ -239,7 +315,7 @@ td.icons {
     width: 450px;    
     font-weight: bold;
     color: brown;
-    top:442px;
+    top:460px;
     left: 115px;
 }
 
