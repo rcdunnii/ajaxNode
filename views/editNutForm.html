@@ -8,15 +8,15 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{editTitle}}</h1>
+<h1 class="txt-cntr">{{editTitle}}</h1>
 
-    <form id="editNutForm" method="POST" action="/update">
+    <form id="editNutForm" enctype="multipart/form-data" method="POST" action="/update">
     
         <div class="formContent">
         
             <input type="hidden" name= "nut_ID" value="{{idStr}}" >
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="LName">Family Name</label>
                 <input type="text"  name="LName"  id="LName size="20" maxlen="20" value= "{{editDoc[0].LName}}" >            
                 <label class="suffix" for="Suffix">Suffix</label>
@@ -29,58 +29,62 @@
                    </select>
             </div>
             
-            <div class="fl clr d-i-b">       
+            <div class="detail fl clr d-i-b">       
                 <label for="Names">First Name(s)</label>
                 <input type="text"  name="Names" id="Names" size="35" maxlen="35" value= "{{editDoc[0].Names}}" >
             </div>
+
+            <div class="detail fl clr d-i-b">
+                <label for="Addr1">Address</label>
+                <input type="text" name="Addr1"  id="Addr1"  size="60" maxlen="60" value= "{{editDoc[0].Loc[1].Addr}}" >
+            </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="HomePh1">Home Phone</label>
                 <input type="text"  name="HomePh1" id="HomePh1"  size="50" maxlen="50" value= "{{editDoc[0].Loc[0].HomePh}}" >
             </div>
-            
-            <div class="fl clr d-i-b">
+ 
+            <div class="detail fl clr d-i-b">
                 <label for="Addr2">Address</label>
                 <input type="text" name="Addr2"  id="Addr2"  size="60" maxlen="60" value= "{{editDoc[0].Loc[1].Addr}}" >
             </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="HomePh2">Home Phone</label>
                 <input type="text"  name="HomePh2" id="HomePh2"  size="50" maxlen="50" value= "{{editDoc[0].Loc[1].HomePh}}" >
             </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="Addr3">Address</label>
                 <input type="text"  name="Addr3"  id="Addr3"  size="60" maxlen="60" value= "{{editDoc[0].Loc[2].Addr}}" >
             </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="HomePh3">Home Phone</label>
                 <input type="text"  name="HomePh3" id="HomePh3"  size="50" maxlen="50" value= "{{editDoc[0].Loc[2].HomePh}}" >
             </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="Email1">Email 1</label>
                 <input type="text" name="Email1"  id="Email1"  size="30" maxlen="30" value= "{{editDoc[0].Email1}}" >
             </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="Email2">Email 1</label>
                 <input type="text" name="Email2"  id="Email1"  size="30" maxlen="30" value= "{{editDoc[0].Email2}}" >
             </div>
             
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="CellPh">Cell Phone</label>
                 <input type="text" name="CellPh" id="CellPh"  size="50" maxlen="50" value= "{{editDoc[0].CellPh}}" >
             </div>
-<!---
-            <div class="fl clr d-i-b">
+
+            <div class="detail fl clr d-i-b">
                 <label for="Bday">Birthday (mm/dd/yyyy)</label>
                 <input type="text" name="Bday" id="Bday" size="21" maxlen="21" value= "{{editDoc[0].Bday}}" >
             </div>
--->
 
-            <div class="fl clr d-i-b">
+            <div class="detail fl clr d-i-b">
                 <label for="Note">Note</label>
                 <input type="text" name="Note" id="Note" size="50" maxlen="50" value= "{{editDoc[0].Note}}" >
             </div>

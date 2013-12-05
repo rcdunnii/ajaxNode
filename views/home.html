@@ -11,18 +11,22 @@
 
 <div class ="loginContainer">
 
-<h2 class="txt-cntr">WELCOME {{ username }} </h2>
+<h2 class="txt-cntr">WELCOME {{username}}</h2>
+<ul class="menu-style">
+{% if !user %}
+    <li class="cntr-li"><a href="/login">LOGIN</a></li>
+{%  else %}
+    <li class="cntr-li"><a  href="/listNuts" title="All the Nuts">View All Nuts</a></li>
+    <li class="cntr-li"><a  href="/enroll" title="Add a Nut">Add Nuts</a></li>
+    <li class="cntr-li"><a  href="/logout">LOGOUT</a></li>    
+{%  endif %}    
+</ul> 
 
-<p class="txt-cntr"><a  href="/listNuts" title="All the Nuts">View All Nuts</a>&nbsp;&nbsp;&nbsp;
-    {% if !user %}
-       <a href="/login">LOGIN USING APP</a></p>
-    {%  else %}
-        <a href="/logout">LOGOUT</a></p>
-    {%  endif %}
-
-<p class="txt-cntr"> You are logged in as <b>{{username }}</b>.<br> You can view list of all nuts by clicking the <br><b>"View All
-    Nuts"</b> link<br/><br/></p>
-    
+{% if !user %}
+    <p class="txt-cntr"> You are logged in as <b>{{username }}</b>.<br> You can view list of all nuts by clicking the <br><b>"View All
+    Nuts"</b> link</p>
+{% endif %}
+ 
 </div>
 
 {% endblock %}

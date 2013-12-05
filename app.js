@@ -58,7 +58,7 @@ app.post('/users/:id', user.updateUser);
 app.get('/delete/:id', user.deleteUser);
 app.get('/search', routes.searchNuts(db1));
 app.get('/triage', routes.triage);
-app.get('/enroll', routes.enrollNutForm);
+app.get('/enroll', routes.enrollNut);
 app.get('/listNuts', routes.listNuts(db1));
 app.get('/delete', routes.deleteNut(mongo,db1));
 app.get('/edit', routes.editNut(mongo, db1));

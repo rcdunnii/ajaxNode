@@ -10,18 +10,15 @@
       var collection = db.get('nuts');
       collection.find({},{"sort" : "LName"})
         .on("success", function(docsObjs){   
-        console.log(typeof docsObjs);
- /*           if (e) throw error;   */
-            var docsArr = [];
+ /*        console.log(typeof docsObjs);
+           if (e) throw error;  
+            var docsArr = []; */
             var thisHost = require('os').hostname();
-            for (key in docsObjs) { 
+ /*           for (key in docsObjs) { 
              //   console.log(docsObjs[key].LName);
                 docsArr.push(docsObjs[key]);
-            }
-            console.log(typeof docsArr);
-            console.log(docsArr.length);
-            console.log(eval(docsArr));
-            res.render('listNuts', {"nutCollection" : docsArr, "listTitle": "Our Nuts", "thisHost": thisHost}); 
+            }   */
+            res.render('listNuts', {"nutCollection" : docsObjs, "listTitle": "Our Nuts", "thisHost": thisHost}); 
         }) 
    };
 };   
@@ -56,7 +53,7 @@
 };
 
     
- exports.enrollNutForm = function(req, res) {
+ exports.enrollNut = function(req, res) {
    res.render('enrollNutForm', {title: "Add New Nut"});
  };
  

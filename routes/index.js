@@ -53,8 +53,8 @@
 };
 
     
- exports.enrollNutForm = function(req, res) {
-   res.render('enrollNutForm', {title: "Add New Nut"});
+ exports.enrollNut = function(req, res) {
+   res.render('enrollNutForm', {"title": "Add New Nut"});
  };
  
  exports.updateNut = function(mongo, db) {

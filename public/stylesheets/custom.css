@@ -24,8 +24,14 @@ body {
   -webkit-border-radius: 10px 10px 10px 10px;
 }
 
-a {
-  color: #00b7ff;
+.menu-style {
+list-style-type: circle;
+text-align: left;
+font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+position: relative;
+width: inherit;
+left: 50%;
+margin-left: -25%;
 }
 
 ul.nutList {
@@ -65,7 +71,7 @@ div.oneNut {
     background-color: rgba(232,232,255, .5);
 }	
    
-td, #addNutForm {
+td {
 	white-space: pre;
     margin-left: 5px;
 }
@@ -159,12 +165,12 @@ td.icons {
     -webkit-border-radius: 10px 10px 10px 10px; 
 }
 
-addNutForm, #editNutForm {
+#addNutForm, #editNutForm {
     position: absolute;
     background: #f5fffa;
     color: #00f;
     width: 600px;
-    height: 560px;
+    height: 600px;
     left: 50%;
     right: 50%;
     margin-left: -300px;
@@ -178,6 +184,7 @@ addNutForm, #editNutForm {
  
 .loginContainer a {
   text-decoration: none;
+  color: #00b7ff; 
 }
 
 .loginHeader {
@@ -186,37 +193,39 @@ addNutForm, #editNutForm {
     left: 190px;
     width: 250px;
 }
-    
-#login-form div,
-#regForm div,
-#addNutForm div,
-#editNutForm div {
-  margin: 10px 20px;
-}
-
-#login-form div label,
-#regForm div label ,
-#addNutForm div label,
-#editNutForm div label {
-  display: inline-block;
-  margin-right: 5px;
-}
-
-#login-form div label,
-#regForm div label {
-  width: 150px;
-}  
-
-#addNutForm div label,
-#editNutForm div label {
-  width: 120px;
-} 
 
 #editNutForm div.formContent,
 #addNutForm div.formContent
 {
     margin-top: 15px;
 }
+   
+#login-form div,
+#regForm div {
+  margin: 10px 20px;
+}
+
+ div.detail {
+    margin: 10px 20px;
+}    
+
+#login-form div label,
+#regForm div label ,
+#addNutForm div.formContent label,
+#editNutForm div.formContent div label {
+  display: inline-block;
+  margin-right: 5px;
+}
+    
+#login-form div label,
+#regForm div label {
+  width: 150px;
+}  
+
+#addNutForm div.formContent label,
+#editNutForm div.formContent div label {
+  width: 120px;
+} 
 
 .suffix {
     text-align: right;
@@ -264,6 +273,12 @@ addNutForm, #editNutForm {
   margin-top: 30px;
 }
 
+.back-button {
+    display: inline-block;
+    float: left;
+    margin-left: 50px;
+}
+    
 .listing {
   clear: both;
   margin: auto;
